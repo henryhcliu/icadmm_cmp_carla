@@ -200,6 +200,7 @@
       <a href="#abs">Paper/Code</a>
 <!--       <a href="#vid">Video</a> -->
       <a href="#results">Results</a>
+      <a href="#conclusion">Conclusion</a>
 <!--       <a href="#aba">Ablations</a> -->
 <!--       <a href="#bib">Bibtex</a> -->
     </div>
@@ -236,12 +237,10 @@
     <div class="content">
       <figure style="font-family: Times; font-weight: normal; margin: 0px; padding: 0px; border: 0px; text-align: left">
          <p style="text-align:center;">
-         <img src="./figs\limited_comm_range_v3.0.png" width="550">
+         <img src="./figs\limited_comm_range_v3.1.png" width="550">
          </p>
          <br>
-	      <figcaption> Graph evolution in the context of CAVs with limited communication range. 
-          CAVs within one orange region are distributed to the same subgraph, and each CAV has edges with the CAVs within the blue regions. 
-          The subgraphs are maintained in one planning horizon and updated between two iterations to facilitate the dynamic geometric relationship between CAVs.
+	      <figcaption> <strong>Fig.1</strong>: Demonstration of the proposed collaborative motion planning strategy for large-scale CAVs in urban driving scenarios.
       </figure>
       <br>
 <!--       <figure style="font-family: Times; font-weight: normal; margin: 0px; padding: 0px; border: 0px; text-align: left">
@@ -256,13 +255,13 @@
     <div id="abs" class="content">
       <h2>Abstract</h2>
       <p>
-      To be added.
+        This paper introduces a cooperative motion planning framework for connected autonomous vehicles (CAVs) to address communication and computing challenges. It uses a dynamic graph, an improved ADMM-based algorithm, and simplifies collision avoidance for efficient optimization. A lightweight graph evolution strategy and a receding horizon approach help manage sub-problems. The framework's efficiency and real-time performance are demonstrated through comparisons and large-scale simulations.
 	    </p>
       <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;">
-<!--           <a href="https://github.com/facebookresearch/banmo"> -->
+          <a href="https://henryhcliu.github.io/cmp_admm_carla">
 	        <strong>[Code]</strong>
           </a>
-<!--           <a href="./banmo-cvpr.pdf"> -->
+          <a href="https://henryhcliu.github.io/cmp_admm_carla">
 	        <strong>[Paper]</strong>
           </a>
 
@@ -279,128 +278,175 @@
    
     <div id="results" class="content">
       <h2>Results</h2>
-      we conduct two sets of simulation experiments to evaluate 
-
-      - the computational efficiency of the proposed parallel optimization algorithm (under one sub-graph $\mathcal{H} = \mathcal{G}$)
-      - the driving performance of the proposed decentralized cooperative motion planning strategy ($\mathcal{G} \supset \mathcal{H}^k, k=\{1,2,...,K\}$)
-      
-      In this web page, we demonstrate the videos of the motion of the CAVs in the CARLA simulator.
-    <h3>Cooperative Motion Planning under One Sub-Graph</h3>
-    The driving performance of the CAVs at an unsignalized intersection using our improved decentralized cooperative motion planning algorithm is shown here:
+      <!-- <p>
+        A cooperative motion planning simulation with 80 CAVs uses a graph evolution and receding horizon approach, reducing computation time for each CAV to under 0.5 seconds. The CAVs show excellent cooperation in overtaking and intersection crossing scenarios, demonstrating the framework's potential for efficient transportation in future smart cities.
+      </p> -->
+    <h3>Bird Eye View of the cooperative driving performance</h3>
+    <p>
+    The spectator is located at the conor of the traffic system. The CAVs are driving collaboratively without any collision in the intersection crossing and overtaking manuvers.
+    </p>
 	<br>
 	<center>
 		<table align=center width=780px>
 			<tr>
 				<td width=780px>
                          <video playsinline controls autoplay muted loop width="100%">
-                          <source  src="./vids/bird1-{0}-all-three.mp4" type="video/mp4">
+                          <source  src="vids\spectator_output_720p.mp4" type="video/mp4">
                          </video>
+				</td>
+			</tr>
+		</table>
+		<!-- <table align=center width=780px>
+			<tr>
+				<td>
+				 Left: reference video (10s, 117 frames). Middle: reconstructed nonrigid 3D shape. Right: reconstructed textured mesh.
+				</td>
+			</tr>
+		</table> -->
+	</center>
+  <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;"></div>
+    <h3>First Person View of the cooperative driving performance</h3>
+	<br>
+	<center>
+		<table align=center width=780px>
+			<tr>
+				<td width=500px>
+                         <video playsinline controls autoplay muted loop width="100%">
+                          <source  src="vids\cav_0.mp4" type="video/mp4">
+                         </video>
+                         <!-- <video playsinline controls autoplay muted loop width="49%">
+                        <source  src="vids\cav_1.mp4" type="video/mp4">
+                        </video> -->
 				</td>
 			</tr>
 		</table>
 		<table align=center width=780px>
 			<tr>
 				<td>
-				 Left: reference video (10s, 117 frames). Middle: reconstructed nonrigid 3D shape. Right: reconstructed textured mesh.
+          <!-- centerize the text -->
+          <div style="text-align: center;">
+            <!-- add spaces between the two sentences -->
+				<strong>Center</strong>: CAV 0 ~ CAV 8. 
+          </div>
 				</td>
 			</tr>
 		</table>
-	</center>
-	    
-    <h3>Large-scale Cooperative Motion Planning with 80 CAVs</h3>
-	<br>
-	<center>
-		<table align=center width=500px>
+    <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;"></div>
+		<table align=center width=780px>
 			<tr>
 				<td width=500px>
-                         <video playsinline controls autoplay muted loop width="100%">
-<!--                           <source  src="./vids/dog-pidun-single-{0}-all-three.mp4" type="video/mp4"> -->
-                          <source  src="./vids/dog-pidun-single-{0}-all-three-v3.mp4" type="video/mp4">
+                         <video playsinline controls autoplay muted loop width="49%">
+                          <source  src="vids\cav_1.mp4" type="video/mp4">
                          </video>
+                         <video playsinline controls autoplay muted loop width="49%">
+                        <source  src="vids\cav_2.mp4" type="video/mp4">
+                        </video>
 				</td>
 			</tr>
 		</table>
-		<table align=center width=500px>
+		<table align=center width=780px>
 			<tr>
 				<td>
-				Left: reference video (7s, 35 frames). Middle: reconstructed nonrigid 3D shape. Right: reconstructed textured mesh.
+          <!-- centerize the text -->
+          <!-- <div style="text-align: center;"> -->
+            <!-- add spaces between the two sentences -->
+				<strong>Left</strong>: CAV 9 ~ CAV 17. <strong>Right</strong>: CAV 18 ~ CAV 26.
+          </div>
+				</td>
+			</tr>
+		</table>
+    <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;"></div>
+		<table align=center width=780px>
+			<tr>
+				<td width=500px>
+                         <video playsinline controls autoplay muted loop width="49%">
+                          <source  src="vids\cav_3.mp4" type="video/mp4">
+                         </video>
+                         <video playsinline controls autoplay muted loop width="49%">
+                        <source  src="vids\cav_4.mp4" type="video/mp4">
+                        </video>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=780px>
+			<tr>
+				<td>
+          <!-- centerize the text -->
+          <!-- <div style="text-align: center;"> -->
+            <!-- add spaces between the two sentences -->
+				<strong>Left</strong>: CAV 27 ~ CAV 35. <strong>Right</strong>: CAV 36 ~ CAV 44.
+          </div>
+				</td>
+			</tr>
+		</table>
+    <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;"></div>
+		<table align=center width=780px>
+			<tr>
+				<td width=500px>
+                         <video playsinline controls autoplay muted loop width="49%">
+                          <source  src="vids\cav_5.mp4" type="video/mp4">
+                         </video>
+                         <video playsinline controls autoplay muted loop width="49%">
+                        <source  src="vids\cav_6.mp4" type="video/mp4">
+                        </video>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=780px>
+			<tr>
+				<td>
+          <!-- centerize the text -->
+          <!-- <div style="text-align: center;"> -->
+            <!-- add spaces between the two sentences -->
+				<strong>Left</strong>: CAV 45 ~ CAV 53. <strong>Right</strong>: CAV 54 ~ CAV 62.
+          </div>
+				</td>
+			</tr>
+		</table>
+    <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;"></div>
+		<table align=center width=780px>
+			<tr>
+				<td width=500px>
+                         <video playsinline controls autoplay muted loop width="49%">
+                          <source  src="vids\cav_7.mp4" type="video/mp4">
+                         </video>
+                         <video playsinline controls autoplay muted loop width="49%">
+                        <source  src="vids\cav_8.mp4" type="video/mp4">
+                        </video>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=780px>
+			<tr>
+				<td>
+          <!-- centerize the text -->
+          <!-- <div style="text-align: center;"> -->
+            <!-- add spaces between the two sentences -->
+				<strong>Left</strong>: CAV 63 ~ CAV 71. <strong>Right</strong>: CAV 71 ~ CAV 80.
+          </div>
 				</td>
 			</tr>
 		</table>
 	</center>
-	    
-	<hr>
-    <br>
 
-	    
- <h2>Results on Synthetic Datasets</h2> 
-	    
-    <h3>Eagle (30 frames)</h3>
-	<br>
-	<center>
-		<table align=center width=700px>
-			<tr>
-				<td width=810px>
-                         <video playsinline controls autoplay muted loop width="100%">
-                          <source  src="./vids/Q_eagle-{0}-all-three.mp4" type="video/mp4">
-                         </video>
-				</td>
-			</tr>
-		</table>
-		<table align=center width=700px>
-			<tr>
-				<td>
-				 Left: reference video. Middle: reconstructed nonrigid 3D shape. Right: reconstructed textured mesh.
-				</td>
-			</tr>
-		</table>
-	</center>
-	    
-    <h3>Q-bouncing (35 frames)</h3>
-	<br>
-	<center>
-		<table align=center width=700px>
-			<tr>
-				<td width=810px>
-                         <video playsinline controls autoplay muted loop width="100%">
-                          <source  src="./vids/Q_bouncing-{0}-all-three.mp4" type="video/mp4">
-                         </video>
-				</td>
-			</tr>
-		</table>
-		<table align=center width=700px>
-			<tr>
-				<td>
-				Left: reference video. Middle: reconstructed nonrigid 3D shape. Right: reconstructed textured mesh.
-				</td>
-			</tr>
-		</table>
-	</center>
-	    
-	    
-    <h3>Dog (19 frames)</h3>
-	<br>
-	<center>
-		<table align=center width=700px>
-			<tr>
-				<td width=810px>
-                         <video playsinline controls autoplay muted loop width="100%">
-                          <source  src="./vids/a-dog-sub-{0}-all-three.mp4" type="video/mp4">
-                         </video>
-				</td>
-			</tr>
-		</table>
-		<table align=center width=700px>
-			<tr>
-				<td>
-				 Left: reference video. Middle: reconstructed nonrigid 3D shape. Right: reconstructed textured mesh.
-				</td>
-			</tr>
-		</table>
-	</center>
+
 	    
       </div>
     </div>
-	    
+    <div id="conclusion" class="content">
+      <h2>Conclusion</h2>
+      <p>
+        A cooperative motion planning simulation with 80 CAVs uses a graph evolution and receding horizon approach, reducing computation time for each CAV to under 0.5 seconds. The CAVs show excellent cooperation in overtaking and intersection crossing scenarios, demonstrating the framework's potential for efficient transportation in future smart cities.
+	    </p>
+      <!-- <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;">
+          <a href="https://henryhcliu.github.io/cmp_admm_carla">
+	        <strong>[Code]</strong>
+          </a>
+          <a href="https://henryhcliu.github.io/cmp_admm_carla">
+	        <strong>[Paper]</strong>
+          </a> -->
+	      
+      </div>
+    </div>
 
 </body></html> 
