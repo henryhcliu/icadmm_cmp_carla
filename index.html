@@ -270,9 +270,11 @@
     <div id="results" class="content">
       <h2>Introduction</h2>
       <p>
-        Please refer to the corresponding preprinted paper for detailed information by clicking the link <a href="https://arxiv.org/abs/2401.09032">
-          <strong>[Paper]</strong>
-          </a>.
+        <strong><span style="color: red">News!</span></strong> This paper is accepted by IEEE Transactions on Intelligent Vehicles, and is accessable via <a href="https://ieeexplore.ieee.org/document/10510603">
+          <strong>IEEE Xplore</strong>
+          </a>.<br><br>
+
+          This paper investigates a cooperative motion planning problem for large-scale connected autonomous vehicles (CAVs) under limited communications, which addresses the challenges of high communication and computing resource requirements. Our proposed methodology incorporates a parallel optimization algorithm with improved consensus ADMM considering a more realistic locally connected topology network, and time complexity of <i>O(N)</i> is achieved by exploiting the sparsity in the dual update process. To further enhance the computational efficiency, we employ a lightweight evolution strategy for the dynamic connectivity graph of CAVs, and each sub-problem split from the consensus ADMM only requires managing a small group of CAVs. The proposed method implemented with the receding horizon scheme is validated thoroughly, and comparisons with existing numerical solvers and approaches demonstrate the efficiency of our proposed algorithm. Also, simulations on large-scale cooperative driving tasks involving up to 100 vehicles are performed in the high-fidelity CARLA simulator, which highlights the remarkable computational efficiency, scalability, and effectiveness of our proposed development.
       </p>
       <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;">
       </div>
@@ -506,12 +508,16 @@
     <div id="teaser" style="margin: 12px; text-align: left;border-top: 1px solid lightgray;padding-top: 12px;"></div>
     <div class="article" align="left">
       <h3>If you find this project inspiring, please kindly cite it using:</h3>
-      <p class="citation">@article{liu2024improved,</p>
-      <p class="title">title={Improved Consensus ADMM for Cooperative Motion Planning of Large-Scale Connected Autonomous Vehicles with Limited Communication},</p>
-      <p class="author">author={Liu, Haichao and Huang, Zhenmin and Zhu, Zicheng and Li, Yulin and Shen, Shaojie and Ma, Jun},</p>
-      <p class="journal">journal={arXiv preprint arXiv:2401.09032},</p>
-      <p class="year">year={2024}</p>
-      <p class="citation">}</p>
+      <p>@article{liu2024improved,<br>
+        author={Liu, Haichao and Huang, Zhenmin and Zhu, Zicheng and Li, Yulin and Shen, Shaojie and Ma, Jun},<br>
+        journal={IEEE Transactions on Intelligent Vehicles},<br>
+        title={Improved Consensus ADMM for Cooperative Motion Planning of Large-Scale Connected Autonomous Vehicles with Limited Communication},<br>
+        year={2024},<br>
+        volume={0},<br>
+        number={0},<br>
+        pages={1-17},<br>
+        keywords={Planning;Optimization;Convex functions;Heuristic algorithms;Computational efficiency;Vehicle dynamics;Topology;Connected autonomous vehicles (CAVs);cooperative motion planning;alternating direction method of multipliers (ADMM);iterative linear quadratic regulator (iLQR)},<br>
+        doi={10.1109/TIV.2024.3395479}}</p>
     </div>
 	</center>
 
